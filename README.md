@@ -1,1 +1,11 @@
-# data-lab4-part2-af
+# My ReadMe
+
+- some
+- bullet
+- points
+
+ETC... 
+
+**bold**
+
+*italics*
