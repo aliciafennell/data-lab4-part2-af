@@ -14,3 +14,36 @@ Let's practice creating interactive graphs and tables using built in data sets i
 - Interactive plots: plotly
 - Interactive tables: DT
 
+```{r, include = FALSE} 
+#Attach packages, include = FALSE makes the code for library attachments not show up in knitted doc 
+
+library(here)
+library(tidyverse)
+library(DT)
+library(plotly)
+```
+
+### A. Interactive graph of iris dimensions
+
+Using Anderson's famous iris data set
+
+```{r, echo = FALSE}
+# echo means code doesnt show up, but graph will. To make this true for the whole thing, I can add it up top... eval = FALSE gets rid of error codes??
+# Store as object and then call it with plotly later
+
+iris_graph <- ggplot(iris, aes(x = Petal.Width,
+                               y = Petal.Length)) +
+  geom_point(aes(size = Sepal.Width,
+                 color = Species),
+             alpha = .5) +
+  theme_minimal() +
+  labs(x = "Petal Width (cm)",
+       y = "Petal Length (cm)",
+       title = "Irises!")
+
+# iris_graph
+
+ggplotly(iris_graph)
+
+```
+
